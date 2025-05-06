@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Prescription Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div id="prescription" class="prescription-container">
+      <header>
+        <h1>SUNSHINE CLINIC</h1>
+        <p>123 Main Street, Dhaka, Bangladesh</p>
+        <p>Dr. Ashraful Islam, MBBS, BCS (Health)</p>
+        <p>BMDC Reg No: 123456</p>
+      </header>
+
+      <section class="patient-info">
+        <div>
+          <strong>Patient Name:</strong> <span id="patientNameDisplay"></span>
+        </div>
+        <div><strong>Age:</strong> <span id="ageDisplay"></span></div>
+        <div><strong>Gender:</strong> <span id="genderDisplay"></span></div>
+        <div><strong>Date:</strong> <span id="dateDisplay"></span></div>
+      </section>
+
+      <section id="medicine-section" class="medicine-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Medicine</th>
+              <th>Dosage</th>
+              <th>Usage</th>
+              <th>Time</th>
+              <th>Days</th>
+            </tr>
+          </thead>
+          <tbody id="medBody"></tbody>
+        </table>
+      </section>
+
+      <footer>
+        <p>Contact: 017XXXXXXXX | Email: sunshineclinic@email.com</p>
+        <p>Doctor's Signature: _______________________</p>
+      </footer>
+    </div>
+
+    <div class="input-area">
+      <h3>Enter Patient Information</h3>
+      <input type="text" placeholder="Patient Name" id="patientName" />
+      <input type="number" placeholder="Age" id="age" />
+      <input type="text" placeholder="Gender" id="gender" />
+      <input type="date" id="date" />
+
+      <div class="actions">
+        <button onclick="generatePrescription()">Generate Prescription</button>
+        <button onclick="downloadPDF()">Download as PDF</button>
+        <button onclick="addMedicine()" class="add-medicine-btn">
+          + Add Medicine
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
